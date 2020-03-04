@@ -1,4 +1,4 @@
 {{ range .Params.tags }}
 {{ $href := print (absURL "tags/") (urlize .) }}
-<small><a class="{{ . }}-tag tag" href="{{ $href }}">{{ . }}</a></small>
+<small class="article-list-tag"><a class="{{ . }}-tag tag" href="{{ $href }}">{{ . }}</a></small>
 {{ end }}
