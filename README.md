@@ -26,9 +26,14 @@ A minimal hugo theme made with bootstrap that focuses on content readability.
 - [Getting help](#getting-help)
 - [Stackbit Deploy](#stackbit-deploy)
 
-## Demo
+## Demo (before fork)
 
 https://minimal-bootstrap-hugo-theme.netlify.com/
+
+## Updates
+* Added SEO
+* Custom CSS and Javascript 
+* Removed link hover
 
 ## Minimum Hugo version
 
@@ -39,7 +44,7 @@ Hugo version `0.60.1` or higher is required. View the [Hugo releases](https://gi
 From the root of your site:
 
 ```
-git submodule add https://github.com/zwbetz-gh/minimal-bootstrap-hugo-theme.git themes/minimal-bootstrap-hugo-theme
+git submodule add https://github.com/banjo/minimal-bootstrap-hugo-theme.git themes/minimal-bootstrap-hugo-theme
 ```
 
 ## Updating
