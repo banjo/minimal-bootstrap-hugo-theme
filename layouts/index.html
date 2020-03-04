@@ -10,7 +10,7 @@
 
 {{ $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
 {{ range $pages.ByPublishDate.Reverse }}
-  <p class="article-list-container">
+  <p class="article-list-container" href="{{ .Permalink }}">
     <a class="article-list-link" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
     {{ $customDateFormat := "January 2, 2006" }}
     {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
