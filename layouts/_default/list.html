@@ -4,8 +4,8 @@
 
 {{ $pages := .Pages }}
 {{ range $pages.ByPublishDate.Reverse }}
-  <p>
-    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  <p class="article-list-container">
+    <a class="article-list-link" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
     {{ $customDateFormat := "January 2, 2006" }}
     {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
     <br>
