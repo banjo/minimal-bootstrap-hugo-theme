@@ -2,8 +2,10 @@
 
 <h1>{{ .Title }}</h1>
 
+<div class="tag-container">
 {{ range .Data.Terms.Alphabetical }}
-  <p><a class="{{ .Page.Title }}-tag tag" href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span></a> {{ .Count }}</p>
+  <a class="{{ .Page.Title }}-tag tag" href="{{ .Page.RelPermalink }}"><span>{{ .Page.Title }}</span></a> 
 {{ end }}
+</div>
 
 {{- end -}}
