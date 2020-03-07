@@ -3,19 +3,27 @@
 <h1>{{ .Title }}</h1>
 
 {{ $pages := .Pages }}
+<div id="list-main-container">
 {{ range $pages.ByPublishDate.Reverse }}
-  <p class="article-list-container">
-    <a class="article-list-link" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+  <div class="article-list-container" onclick="location.href='{{ .Permalink }}'">
+    <div class="link-container">
+      <a class="article-list-link" href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+    </div>
     {{ $customDateFormat := "January 2, 2006" }}
     {{ with .Site.Params.customDateFormat }}{{ $customDateFormat = . }}{{ end }}
     <br>
-    <small class="text-secondary">{{ .PublishDate.Format $customDateFormat }}</small>
-    {{ partial "tags" . }}
+    {{$tag := index (.Params.Tags) 0 }}
+    <div class="meta-container {{$tag}}-tag" onclick="location.href='{{ .Permalink }}'">
+      <div class="article-list-date">{{ .PublishDate.Format $customDateFormat }}</div>
+      <div class="article-list-tag">{{$tag}}</div>
+      <!-- {{ partial "tags" . }} -->
+    </div>
     {{ if eq .Site.Params.showPostSummary true }}
     <br>
     {{ .Summary }}
     {{ end }}
-  </p>
+  </div>
 {{ end }}
+</div>
 
 {{- end -}}
